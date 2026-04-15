@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>유니콘 미만 유망 AI 스타트업 레이더 | 2026.04.14</title>
+<title>유니콘 미만 유망 AI 스타트업 레이더 | 2026.04.15</title>
 <style>
   :root {
     --bg: #0a0a0f;
@@ -15,6 +15,10 @@
     --green-soft: rgba(16,185,129,0.12);
     --amber: #f59e0b;
     --amber-soft: rgba(245,158,11,0.12);
+    --rose: #f43f5e;
+    --rose-soft: rgba(244,63,94,0.12);
+    --cyan: #06b6d4;
+    --cyan-soft: rgba(6,182,212,0.12);
     --text: #e2e2e8;
     --text-dim: #8b8b9e;
     --text-bright: #ffffff;
@@ -28,8 +32,6 @@
     min-height: 100vh;
   }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-  /* Header */
   header {
     padding: 48px 0 32px;
     border-bottom: 1px solid var(--border);
@@ -56,8 +58,17 @@
     border-radius: 20px;
     margin-top: 12px;
   }
-
-  /* Summary Stats */
+  .badge-new {
+    display: inline-block;
+    background: var(--green-soft);
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
   .stats-row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -87,8 +98,6 @@
     color: var(--green);
     margin-top: 4px;
   }
-
-  /* Section */
   .section { margin-bottom: 48px; }
   .section-title {
     font-size: 20px;
@@ -98,8 +107,6 @@
     padding-bottom: 12px;
     border-bottom: 1px solid var(--border);
   }
-
-  /* Startup Cards */
   .startup-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -138,7 +145,9 @@
   .tag-finance { background: var(--amber-soft); color: var(--amber); }
   .tag-infra { background: rgba(168,85,247,0.12); color: #a855f7; }
   .tag-devtools { background: rgba(236,72,153,0.12); color: #ec4899; }
-
+  .tag-security { background: var(--rose-soft); color: var(--rose); }
+  .tag-telecom { background: var(--cyan-soft); color: var(--cyan); }
+  .tag-construction { background: rgba(251,191,36,0.12); color: #fbbf24; }
   .startup-card .meta-row {
     display: flex;
     flex-wrap: wrap;
@@ -181,8 +190,6 @@
     text-decoration: none;
   }
   .source-link a:hover { text-decoration: underline; }
-
-  /* Insight Box */
   .insight-box {
     background: var(--card);
     border: 1px solid var(--border);
@@ -205,8 +212,6 @@
     color: var(--accent);
     font-weight: 700;
   }
-
-  /* Footer */
   footer {
     padding: 32px 0;
     border-top: 1px solid var(--border);
@@ -216,8 +221,6 @@
     text-align: center;
   }
   footer a { color: var(--accent); text-decoration: none; }
-
-  /* Selection criteria */
   .criteria {
     background: var(--card);
     border: 1px solid var(--border);
@@ -229,7 +232,21 @@
     line-height: 1.8;
   }
   .criteria strong { color: var(--text); }
-
+  .day-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 32px 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dim);
+  }
+  .day-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
   @media (max-width: 640px) {
     header h1 { font-size: 24px; }
     .stats-row { grid-template-columns: 1fr 1fr; }
@@ -243,43 +260,242 @@
 <header>
   <h1>유니콘 미만 유망 AI 스타트업 레이더</h1>
   <p class="subtitle">밸류에이션 $1B 미만 | 매출 발생 | AI 활용 소규모 팀 중심</p>
-  <span class="date-badge">2026.04.14 업데이트</span>
+  <span class="date-badge">2026.04.15 업데이트</span>
 </header>
 
 <div class="criteria">
-  <strong>선정 기준:</strong> 밸류에이션 $1B 미만 (유니콘 전 단계) &middot; 실제 매출 또는 유료 고객 확보 &middot; AI/ML을 핵심 기술로 활용 &middot; 팀 규모 100명 이하 &middot; Seed~Series B 단계<br>
-  <strong>데이터 소스:</strong> CB Insights AI 100 &middot; PitchBook Company Profiles &middot; Statista &middot; Forbes Next Billion-Dollar Startups &middot; TechCrunch &middot; Bloomberg
+  <strong>선정 기준:</strong> 밸류에이션 $1B 미만 (유니콘 전 단계) &middot; 실제 매출 또는 유료 고객 확보 &middot; AI/ML을 핵심 기술로 활용 &middot; Seed~Series B 단계<br>
+  <strong>데이터 소스:</strong> CB Insights &middot; PitchBook &middot; Statista &middot; Forbes &middot; TechCrunch &middot; Bloomberg &middot; SiliconANGLE
 </div>
 
 <div class="stats-row">
   <div class="stat-card">
-    <div class="label">발굴 기업 수</div>
-    <div class="value">10</div>
-    <div class="note">전일 보고 대비 신규</div>
+    <div class="label">총 발굴 기업</div>
+    <div class="value">18</div>
+    <div class="note">누적 (4/14 10개 + 4/15 8개)</div>
   </div>
   <div class="stat-card">
-    <div class="label">평균 총 펀딩</div>
-    <div class="value">$89M</div>
-    <div class="note">Seed ~ Series C</div>
-  </div>
-  <div class="stat-card">
-    <div class="label">평균 밸류에이션</div>
-    <div class="value">~$620M</div>
-    <div class="note">유니콘 직전 구간</div>
+    <div class="label">오늘 신규</div>
+    <div class="value">+8</div>
+    <div class="note">2026.04.15 추가</div>
   </div>
   <div class="stat-card">
     <div class="label">커버 섹터</div>
-    <div class="value">6개</div>
-    <div class="note">AI Infra / DevTools / Finance / Health / Design / Doc</div>
+    <div class="value">9개</div>
+    <div class="note">AI Security 섹터 신규 추가</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">30일 중복 추적</div>
+    <div class="value">51개사</div>
+    <div class="note">보고 기업 자동 제외</div>
   </div>
 </div>
 
-<!-- ========== STARTUPS ========== -->
+<!-- ========== 4/15 NEW ========== -->
 <div class="section">
-<h2 class="section-title">유망 스타트업 프로필</h2>
+<h2 class="section-title">2026.04.15 신규 발굴 <span class="badge-new">NEW</span></h2>
 <div class="startup-grid">
 
-<!-- 1. Braintrust -->
+<!-- 1. Astrix Security -->
+<div class="startup-card">
+  <div class="top-row">
+    <h3>Astrix Security</h3>
+    <span class="sector-tag tag-security">AI Cybersecurity / NHI</span>
+  </div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>밸류에이션:</strong> $192M</span>
+    <span class="meta-item"><strong>총 펀딩:</strong> $95M (Series B, 2024.12)</span>
+    <span class="meta-item"><strong>소재지:</strong> 이스라엘 / 미국</span>
+    <span class="meta-item"><strong>팀:</strong> ~80명</span>
+  </div>
+  <p class="desc">
+    비인간 아이덴티티(NHI) 보안 플랫폼. API 키, 서비스 계정, OAuth 토큰 등
+    AI 에이전트 시대에 폭발적으로 늘어나는 비인간 자격증명의 라이프사이클을
+    자동으로 검출/모니터링/관리한다. 에이전트리스 아키텍처로 배포 부담 최소화.
+  </p>
+  <div class="why">
+    Series A 이후 매출 5배 성장, 15개월간 고객 이탈률 제로, NPS 9.4 (업계 최고 수준).
+    Fortune 500 고객: Workday, NetApp, Priceline, Figma, HubSpot. Gartner Cool Vendor 선정.
+    NHI 시장이 30% YoY 성장하는 가운데, AI 에이전트 확산으로 비인간 자격증명 보안 수요 급증.
+  </div>
+  <div class="source-link">출처: <a href="https://siliconangle.com/2024/12/10/astrix-security-secures-45m-strengthen-nonhuman-identity-protection-enterprise/" target="_blank">SiliconANGLE</a>, <a href="https://aeo.sig.ai/brands/astrix-security" target="_blank">Astrix Revenue Stats</a>, <a href="https://cashmere.io/v/Azzy3c" target="_blank">PitchBook</a></div>
+</div>
+
+<!-- 2. 7AI -->
+<div class="startup-card">
+  <div class="top-row">
+    <h3>7AI</h3>
+    <span class="sector-tag tag-security">AI Security Agents</span>
+  </div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>밸류에이션:</strong> $700M</span>
+    <span class="meta-item"><strong>총 펀딩:</strong> $166M (Series A, 2025.12)</span>
+    <span class="meta-item"><strong>소재지:</strong> 미국</span>
+  </div>
+  <p class="desc">
+    자율 보안 에이전트 플랫폼. 사이버보안 역사상 최대 규모의 Series A($130M)를 기록.
+    AI 에이전트가 위협 탐지, 분석, 대응을 자율적으로 수행하는 차세대 SOC 자동화.
+    Cybereason 창업자 Lior Div가 2024년 초 설립.
+  </p>
+  <div class="why">
+    사이버보안 Series A 역사상 최대 규모. 창업자 Lior Div는 Cybereason(LevelBlue 인수) 경력으로
+    엔터프라이즈 보안 시장의 깊은 네트워크 보유. AI 사이버보안 시장 CAGR 73.9% (2024-2029)의 핵심 수혜자.
+  </div>
+  <div class="source-link">출처: <a href="https://softwarestrategiesblog.com/2026/03/28/agentic-ai-security-startups-funding-mna-rsac-2026/" target="_blank">Software Strategies Blog</a></div>
+</div>
+
+<!-- 3. WitnessAI -->
+<div class="startup-card">
+  <div class="top-row">
+    <h3>WitnessAI</h3>
+    <span class="sector-tag tag-security">AI Governance / Security</span>
+  </div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>총 펀딩:</strong> $85.5M (Series B, 2026.1)</span>
+    <span class="meta-item"><strong>ARR 성장:</strong> 500% YoY</span>
+    <span class="meta-item"><strong>소재지:</strong> 마운틴뷰, 캘리포니아</span>
+  </div>
+  <p class="desc">
+    엔터프라이즈 AI 보안/거버넌스 플랫폼. 직원과 AI 에이전트의 모든 AI 인터랙션에 대해
+    네트워크 레벨 가시성을 제공한다. 싱글 테넌트 아키텍처로 데이터 주권과 규정 준수를 보장.
+    에이전틱 AI 거버넌스 기능을 2026.1부터 제공.
+  </p>
+  <div class="why">
+    ARR 500% 성장 + 직원 5배 확대. Sound Ventures(OpenAI/Anthropic 초기 투자자) 리드,
+    Samsung Ventures, Qualcomm Ventures 전략 참여. GV(Google Ventures)가 Series A 공동 리드.
+    네이티브 앱까지 커버하는 네트워크 레벨 접근이 레거시 DLP 대비 차별화.
+  </div>
+  <div class="source-link">출처: <a href="https://witness.ai/resources/witnessai-raises-58-million-for-global-expansion-and-announces-new-ways-to-secure-ai-agents/" target="_blank">WitnessAI</a>, <a href="https://www.latimes.com/b2b/ai-technology/story/2026-02-09/witnessai-raises-58m-sound-ventures" target="_blank">LA Times</a></div>
+</div>
+
+<!-- 4. Sanas -->
+<div class="startup-card">
+  <div class="top-row">
+    <h3>Sanas</h3>
+    <span class="sector-tag tag-ai">AI Speech / Accent Translation</span>
+  </div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>총 펀딩:</strong> $102.5M (Series B, 2025.2)</span>
+    <span class="meta-item"><strong>사용자:</strong> 750,000+</span>
+    <span class="meta-item"><strong>소재지:</strong> 팔로알토, 캘리포니아</span>
+  </div>
+  <p class="desc">
+    세계 최초 실시간 억양 변환 AI. 콜센터 상담원의 발음을 실시간으로 변환하면서
+    고유한 음성 특성과 감정은 보존한다. 18개월 만에 5,000명에서 750,000명+ 사용자로
+    150배 성장. 39개국, 금융/물류/헬스케어/하드웨어 등 다수 산업에 배포.
+  </p>
+  <div class="why">
+    Top 5 BPO, Top 3 금융사, Top 5 헬스케어 기관이 고객. 18개월 사용자 150배 성장은
+    콜센터/BPO 산업의 핵심 페인 포인트를 정확히 해결함을 입증.
+    글로벌 콜센터 시장 $340B에서 인건비 최적화 AI로 대규모 TAM.
+  </div>
+  <div class="source-link">출처: <a href="https://siliconangle.com/2025/02/19/sanas-gets-65m-funding-expand-real-time-accent-translation-software/" target="_blank">SiliconANGLE</a>, <a href="https://www.globenewswire.com/news-release/2025/02/19/3029019/0/en/Sanas-Raises-65-Million-Series-B-Accelerating-Global-Adoption-of-Its-Real-Time-Speech-Understanding-Technology.html" target="_blank">GlobeNewswire</a></div>
+</div>
+
+<!-- 5. Aira Technologies -->
+<div class="startup-card">
+  <div class="top-row">
+    <h3>Aira Technologies</h3>
+    <span class="sector-tag tag-telecom">AI-RAN / Telecom</span>
+  </div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>총 펀딩:</strong> $14.5M (Series B, 2024.11)</span>
+    <span class="meta-item"><strong>투자자:</strong> AT&T Ventures, Intel Capital, In-Q-Tel</span>
+    <span class="meta-item"><strong>소재지:</strong> 사라토가, 캘리포니아</span>
+  </div>
+  <p class="desc">
+    GenAI 기반 RAN(무선 접속 네트워크) 자동화 플랫폼. 통신사의 네트워크 운영,
+    에너지 효율, 스펙트럼 효율을 AI/ML로 최적화한다.
+    AT&T, Intel, 미국 정부 투자기관(In-Q-Tel)이 직접 투자.
+  </p>
+  <div class="why">
+    AI-RAN 시장 2025년 $2.96B에서 2035년 $37.19B (CAGR 28.79%) 전망 속에서
+    AT&T Ventures + Intel Capital + In-Q-Tel의 전략 투자가 기술 검증 시그널.
+    텔레콤 오퍼레이터(시장 70% 점유)의 AI 네트워크 자동화 수요에 정확히 대응.
+  </div>
+  <div class="source-link">출처: <a href="https://aira-technology.com/aira-technologies-raises-14-5-million-series-b-from-att-ventures-intel-capital-and-in-q-tel-iqt-to-accelerate-ran-automation-using-genai/" target="_blank">Aira Technologies</a>, <a href="https://www.precedenceresearch.com/ai-ran-market" target="_blank">Precedence Research</a></div>
+</div>
+
+<!-- 6. Motif -->
+<div class="startup-card">
+  <div class="top-row">
+    <h3>Motif</h3>
+    <span class="sector-tag tag-construction">AI Architecture / AEC</span>
+  </div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>총 펀딩:</strong> $46M (Seed+Series A, 2025.1)</span>
+    <span class="meta-item"><strong>리드:</strong> CapitalG (Alphabet), Redpoint</span>
+    <span class="meta-item"><strong>소재지:</strong> 샌프란시스코</span>
+  </div>
+  <p class="desc">
+    건축/엔지니어링/건설(AEC) 산업을 위한 차세대 AI 협업 플랫폼.
+    실시간 3D 협업 + AI 보조 레이아웃 생성으로 20세기 레거시 소프트웨어(Autodesk 등)를 대체.
+    Forbes Next Billion-Dollar Startups 2025 선정, AI Disruptors 60 리스트 선정.
+  </p>
+  <div class="why">
+    Autodesk 전 Co-CEO(Amar Hanspal) + VP(Brian Mathews) 창업 — $8B AEC 소프트웨어 시장의
+    인사이더. CapitalG(Alphabet)가 Series A 리드. AEC 산업은 AI 침투율이 가장 낮은 대형 시장으로
+    디지털 전환 시 폭발적 성장 가능.
+  </div>
+  <div class="source-link">출처: <a href="https://www.businesswire.com/news/home/20250130614043/en/Motif-Raises-46-Million-from-CapitalG-and-Redpoint-to-Revolutionize-The-AEC-Software-Industry" target="_blank">Business Wire</a>, <a href="https://www.motif.io/blog/motif-ai-disruptors-2025" target="_blank">Motif Blog</a></div>
+</div>
+
+<!-- 7. Inkeep -->
+<div class="startup-card">
+  <div class="top-row">
+    <h3>Inkeep</h3>
+    <span class="sector-tag tag-ai">No-Code AI Agents</span>
+  </div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>총 펀딩:</strong> $13M (Seed, 2025.9)</span>
+    <span class="meta-item"><strong>고객:</strong> 200+ (Anthropic, Midjourney 포함)</span>
+    <span class="meta-item"><strong>소재지:</strong> 뉴욕</span>
+  </div>
+  <p class="desc">
+    비개발자도 AI 에이전트를 구축할 수 있는 노코드 플랫폼. 블로그 작성, 고객 문의 응대,
+    내부 지식 검색 등 다양한 업무 자동화를 위한 에이전트를 누구나 만들 수 있도록 지원.
+    Khosla Ventures, YC가 공동 리드.
+  </p>
+  <div class="why">
+    Anthropic, Midjourney 등 AI 선두 기업이 직접 고객으로 사용. 200+ 기업 채택.
+    AI 에이전트의 대중화(비개발자 접근성) 트렌드의 최전선.
+    28세 창업자가 YC + Khosla 동시 투자를 이끌어냄.
+  </div>
+  <div class="source-link">출처: <a href="https://www.forbes.com/sites/zoyahasan/2025/09/05/this-startup-just-raised-13-million-to-make-ai-agents-easy-for-any-team/" target="_blank">Forbes</a>, <a href="https://aiworld.eu/story/inkeep-secures-13m-seed-funding-for-no-code-ai-agent-platform" target="_blank">AI World</a></div>
+</div>
+
+<!-- 8. Noma Security -->
+<div class="startup-card">
+  <div class="top-row">
+    <h3>Noma Security</h3>
+    <span class="sector-tag tag-security">AI Agent Security Posture</span>
+  </div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>총 펀딩:</strong> $132M (Series B, 2025.7)</span>
+    <span class="meta-item"><strong>시리즈 B:</strong> $100M</span>
+    <span class="meta-item"><strong>소재지:</strong> 미국 / 이스라엘</span>
+  </div>
+  <p class="desc">
+    AI 에이전트의 보안 태세를 관리하는 플랫폼. AI 모델 배포, 에이전트 워크플로,
+    데이터 파이프라인의 보안 취약점을 자동 스캐닝하고 지속적으로 모니터링한다.
+    CB Insights Mosaic 점수 768 (업계 평균 370 대비 2배 이상).
+  </p>
+  <div class="why">
+    AI 에이전트 보안 스타트업 평균 Mosaic 점수 768로 전체 사기업 평균의 2배.
+    에이전트 시대에 LLM 파이프라인의 보안 포스처 관리는 규제 요건으로 강화 중.
+    $100M Series B는 시장의 높은 확신 수준을 반영.
+  </div>
+  <div class="source-link">출처: <a href="https://softwarestrategiesblog.com/2026/03/28/agentic-ai-security-startups-funding-mna-rsac-2026/" target="_blank">Software Strategies Blog</a></div>
+</div>
+
+</div>
+</div>
+
+<!-- ========== 4/14 PREVIOUS ========== -->
+<div class="section">
+<h2 class="section-title">2026.04.14 발굴</h2>
+<div class="startup-grid">
+
 <div class="startup-card">
   <div class="top-row">
     <h3>Braintrust</h3>
@@ -291,19 +507,12 @@
     <span class="meta-item"><strong>소재지:</strong> 샌프란시스코</span>
   </div>
   <p class="desc">
-    AI 모델 및 에이전트의 프로덕션 품질을 모니터링하는 AI 네이티브 옵저버빌리티 플랫폼.
-    프롬프트, 툴 콜, 컨텍스트, 메타데이터의 전체 추론 과정을 추적하며, 자체 개발 Brainstore DB는
-    경쟁 대비 80% 빠른 처리 속도를 제공한다.
+    AI 모델/에이전트 프로덕션 옵저버빌리티 플랫폼. 자체 DB(Brainstore)로 경쟁 대비 80% 빠른 처리.
   </p>
-  <div class="why">
-    Notion, Replit, Cloudflare, Stripe, Ramp, Dropbox 등 AI 네이티브 기업이 이미 고객.
-    ICONIQ 리드, a16z/Greylock 참여로 Series A($150M) 대비 5배 이상 밸류에이션 상승.
-    AI 에이전트 확산에 따른 필수 인프라 레이어로 포지셔닝.
-  </div>
-  <div class="source-link">출처: <a href="https://siliconangle.com/2026/02/17/braintrust-lands-80m-series-b-funding-round-become-observability-layer-ai/" target="_blank">SiliconANGLE</a>, <a href="https://techfundingnews.com/braintrust-80m-series-b-iconiq-ai-observability/" target="_blank">Tech Funding News</a></div>
+  <div class="why">Notion, Replit, Cloudflare, Stripe, Ramp, Dropbox 고객. ICONIQ 리드, a16z/Greylock 참여.</div>
+  <div class="source-link">출처: <a href="https://siliconangle.com/2026/02/17/braintrust-lands-80m-series-b-funding-round-become-observability-layer-ai/" target="_blank">SiliconANGLE</a></div>
 </div>
 
-<!-- 2. Reducto -->
 <div class="startup-card">
   <div class="top-row">
     <h3>Reducto</h3>
@@ -311,45 +520,27 @@
   </div>
   <div class="meta-row">
     <span class="meta-item"><strong>총 펀딩:</strong> $108M (Series B, 2025.10)</span>
-    <span class="meta-item"><strong>리드 투자자:</strong> a16z</span>
-    <span class="meta-item"><strong>소재지:</strong> 샌프란시스코</span>
+    <span class="meta-item"><strong>처리량:</strong> 1B+ 페이지</span>
   </div>
-  <p class="desc">
-    비전 언어 모델(VLM)과 에이전틱 워크플로를 결합한 AI 문서 인텔리전스 플랫폼.
-    PDF 레드라인, 차트 추출, 헬스케어 데이터 추출 등 미션 크리티컬 문서 파이프라인을 자동화한다.
-    Series A 이후 6개월 만에 처리량 6배 성장, 누적 10억 페이지 이상 처리.
-  </p>
-  <div class="why">
-    Harvey, Rogo, Scale AI, Fortune 10 기업이 고객. 5개월 만에 Series A→B 연속 클로징.
-    Forbes Next Billion-Dollar Startups 2025 선정. 250M→1B+ 페이지 처리량 급증이 PMF 입증.
-  </div>
-  <div class="source-link">출처: <a href="https://reducto.ai/blog/reducto-series-b-funding" target="_blank">Reducto Blog</a>, <a href="https://www.prnewswire.com/news-releases/reducto-raises-75m-series-b-to-define-the-future-of-ai-document-intelligence-302581462.html" target="_blank">PR Newswire</a></div>
+  <p class="desc">VLM + 에이전틱 워크플로 결합 AI 문서 인텔리전스. 6개월 만에 처리량 6배 성장.</p>
+  <div class="why">Harvey, Rogo, Scale AI, Fortune 10 고객. Forbes Next Billion-Dollar Startups 2025.</div>
+  <div class="source-link">출처: <a href="https://reducto.ai/blog/reducto-series-b-funding" target="_blank">Reducto</a></div>
 </div>
 
-<!-- 3. Graphite -->
 <div class="startup-card">
   <div class="top-row">
     <h3>Graphite</h3>
-    <span class="sector-tag tag-devtools">AI DevTools / Code Review</span>
+    <span class="sector-tag tag-devtools">AI Code Review</span>
   </div>
   <div class="meta-row">
     <span class="meta-item"><strong>총 펀딩:</strong> $72M (Series B, 2025.3)</span>
-    <span class="meta-item"><strong>리드 투자자:</strong> Accel</span>
-    <span class="meta-item"><strong>소재지:</strong> 뉴욕</span>
+    <span class="meta-item"><strong>사용자:</strong> 100K+</span>
   </div>
-  <p class="desc">
-    AI 기반 코드 리뷰 플랫폼으로, 스택드 PR(풀 리퀘스트)을 지원하여 소프트웨어 개발의
-    아우터 루프를 가속한다. Anthropic Anthology Fund, Shopify Ventures, Figma Ventures 등 전략적 투자자 확보.
-  </p>
-  <div class="why">
-    매출 YoY 20배 이상 성장. 100K+ 사용자, 500+ 기업 (Shopify, Snowflake, Figma, Perplexity).
-    코어 코드 리뷰 기능 전면 무료화로 개발자 커뮤니티 빠르게 확대 중.
-    Anthropic이 직접 투자한 DevTools 스타트업.
-  </div>
-  <div class="source-link">출처: <a href="https://siliconangle.com/2025/03/18/ai-code-assist-startup-graphite-raises-52m-try-keep-ahead-competition/" target="_blank">SiliconANGLE</a>, <a href="https://research.contrary.com/company/graphite" target="_blank">Contrary Research</a></div>
+  <p class="desc">AI 코드 리뷰 + 스택드 PR. Anthropic Anthology Fund, Shopify Ventures 전략 투자.</p>
+  <div class="why">매출 20x YoY, 500+ 기업 (Shopify, Snowflake, Figma, Perplexity). 코어 기능 무료화.</div>
+  <div class="source-link">출처: <a href="https://siliconangle.com/2025/03/18/ai-code-assist-startup-graphite-raises-52m-try-keep-ahead-competition/" target="_blank">SiliconANGLE</a></div>
 </div>
 
-<!-- 4. Rogo -->
 <div class="startup-card">
   <div class="top-row">
     <h3>Rogo</h3>
@@ -357,21 +548,13 @@
   </div>
   <div class="meta-row">
     <span class="meta-item"><strong>총 펀딩:</strong> $165M (Series C, 2026.1)</span>
-    <span class="meta-item"><strong>리드 투자자:</strong> Sequoia Capital</span>
-    <span class="meta-item"><strong>소재지:</strong> 뉴욕 / 런던</span>
+    <span class="meta-item"><strong>리드:</strong> Sequoia Capital</span>
   </div>
-  <p class="desc">
-    금융 워크플로 특화 AI 플랫폼. 자율 금융 에이전트를 통해 투자은행, 헤지펀드, PE의
-    리서치, 분석, 듀딜리전스를 자동화한다. Forbes 선정 "90시간 뱅킹 주간을 혁신하는 AI".
-  </p>
-  <div class="why">
-    Sequoia 리드 + Henry Kravis(KKR 창업자), Wells Fargo, J.P. Morgan, Tiger Global 참여.
-    유럽 확장(런던 오피스) 개시. 금융 도메인 특화로 범용 AI 대비 높은 진입장벽과 전환비용.
-  </div>
-  <div class="source-link">출처: <a href="https://fintech.global/2026/01/28/rogo-raises-75m-series-c-to-scale-ai-finance-platform/" target="_blank">FinTech Global</a>, <a href="https://rogo.ai" target="_blank">Rogo.ai</a></div>
+  <p class="desc">금융 워크플로 특화 AI. 자율 금융 에이전트로 IB/HF/PE 리서치/분석 자동화.</p>
+  <div class="why">Sequoia 리드, Henry Kravis/J.P. Morgan/Tiger Global 참여. 유럽 확장 개시.</div>
+  <div class="source-link">출처: <a href="https://fintech.global/2026/01/28/rogo-raises-75m-series-c-to-scale-ai-finance-platform/" target="_blank">FinTech Global</a></div>
 </div>
 
-<!-- 5. Assort Health -->
 <div class="startup-card">
   <div class="top-row">
     <h3>Assort Health</h3>
@@ -379,23 +562,13 @@
   </div>
   <div class="meta-row">
     <span class="meta-item"><strong>밸류에이션:</strong> ~$750M</span>
-    <span class="meta-item"><strong>총 펀딩:</strong> $102M (Series B, 2025.9)</span>
-    <span class="meta-item"><strong>소재지:</strong> 샌프란시스코</span>
+    <span class="meta-item"><strong>총 펀딩:</strong> $102M (Series B)</span>
   </div>
-  <p class="desc">
-    의료 콜센터를 대체하는 에이전틱 AI 음성 플랫폼. 예약, 보험 확인, 처방 갱신 등
-    환자 전화 인터랙션을 AI가 처리한다. 4,200만 건 이상의 환자 인터랙션 처리 실적.
-    대기 시간을 평균 11분에서 1분으로 단축.
-  </p>
-  <div class="why">
-    4개월 만에 Series A($22M)→B($76M) 연속 클로징. Forbes Next Billion-Dollar Startups 2025,
-    Cloud 100 Rising Stars 선정. Lightspeed 리드. Nuance 창업 CEO가 보드 어드바이저로 합류.
-    미국 의료 전화 자동화 시장의 선두 주자.
-  </div>
-  <div class="source-link">출처: <a href="https://www.prnewswire.com/news-releases/assort-health-secures-102-million-to-scale-nations-first-agentic-ai-platform-that-solves-longstanding-frustrations-tied-to-patient-access-and-experience-302570046.html" target="_blank">PR Newswire</a>, <a href="https://techcrunch.com/2025/08/26/assort-health-nabs-50m-to-automate-patient-phone-calls-sources-say/" target="_blank">TechCrunch</a></div>
+  <p class="desc">의료 콜센터 대체 에이전틱 AI 음성 플랫폼. 4,200만+ 환자 인터랙션 처리.</p>
+  <div class="why">4개월 Series A→B. Forbes Next Billion-Dollar, Cloud 100 Rising Stars.</div>
+  <div class="source-link">출처: <a href="https://techcrunch.com/2025/08/26/assort-health-nabs-50m-to-automate-patient-phone-calls-sources-say/" target="_blank">TechCrunch</a></div>
 </div>
 
-<!-- 6. Decart -->
 <div class="startup-card">
   <div class="top-row">
     <h3>Decart</h3>
@@ -404,21 +577,11 @@
   <div class="meta-row">
     <span class="meta-item"><strong>총 펀딩:</strong> $53M</span>
     <span class="meta-item"><strong>연 매출:</strong> ~$20M</span>
-    <span class="meta-item"><strong>소재지:</strong> 이스라엘</span>
   </div>
-  <p class="desc">
-    실시간 AI 월드 시뮬레이션 모델을 개발하는 초기 파운데이션 모델 기업.
-    세계 최초 실시간 인터랙티브 AI 월드 생성 기술을 보유하며,
-    게임, 시뮬레이션, 트레이닝 데이터 생성 분야에 응용한다.
-  </p>
-  <div class="why">
-    Forbes Next Billion-Dollar Startups 2025 선정. $53M 펀딩으로 이미 $20M 매출 달성 —
-    펀딩 대비 매출 효율이 매우 높음. Physical AI와 시뮬레이션 시장의 교차점에 위치.
-  </div>
-  <div class="source-link">출처: <a href="https://www.linkedin.com/posts/itselanagold_forbes-says-these-25-startups-will-hit-1b-activity-7361427290959806465-c4_0" target="_blank">Forbes via LinkedIn</a></div>
+  <p class="desc">실시간 AI 월드 시뮬레이션 모델. 게임/시뮬레이션/트레이닝 데이터 생성.</p>
+  <div class="why">$53M 펀딩으로 $20M 매출 — 펀딩 대비 매출 효율 최상위. Forbes 선정.</div>
 </div>
 
-<!-- 7. Krea -->
 <div class="startup-card">
   <div class="top-row">
     <h3>Krea</h3>
@@ -426,88 +589,48 @@
   </div>
   <div class="meta-row">
     <span class="meta-item"><strong>사용자:</strong> 20M+</span>
-    <span class="meta-item"><strong>주요 고객:</strong> Pixar, Microsoft</span>
-    <span class="meta-item"><strong>소재지:</strong> 미국</span>
+    <span class="meta-item"><strong>고객:</strong> Pixar, Microsoft</span>
   </div>
-  <p class="desc">
-    올인원 AI 디자인 툴. 이미지 생성, 비디오, 3D 에셋 등을 하나의 플랫폼에서 처리한다.
-    실시간 캔버스 위에서 AI와 협업하는 인터랙티브 디자인 경험을 제공.
-  </p>
-  <div class="why">
-    Forbes Next Billion-Dollar Startups 2025 선정. 20M 사용자로 Pixar, Microsoft 등 엔터프라이즈 채택.
-    Midjourney, Adobe Firefly와 경쟁하면서도 원스톱 디자인 워크플로로 차별화.
-  </div>
-  <div class="source-link">출처: <a href="https://www.linkedin.com/posts/itselanagold_forbes-says-these-25-startups-will-hit-1b-activity-7361427290959806465-c4_0" target="_blank">Forbes via LinkedIn</a></div>
+  <p class="desc">올인원 AI 디자인 툴. 이미지/비디오/3D를 하나의 실시간 캔버스에서 처리.</p>
+  <div class="why">20M 사용자. Midjourney/Adobe Firefly 대비 원스톱 워크플로 차별화. Forbes 선정.</div>
 </div>
 
-<!-- 8. Browserbase -->
 <div class="startup-card">
   <div class="top-row">
     <h3>Browserbase</h3>
-    <span class="sector-tag tag-infra">AI Infra / Agent Infra</span>
+    <span class="sector-tag tag-infra">Agent Infra</span>
   </div>
   <div class="meta-row">
     <span class="meta-item"><strong>단계:</strong> Early Stage</span>
-    <span class="meta-item"><strong>소재지:</strong> 샌프란시스코</span>
   </div>
-  <p class="desc">
-    AI 에이전트가 웹을 탐색하고 작업을 수행할 수 있게 하는 헤드리스 브라우저 인프라.
-    에이전트가 인간처럼 웹 페이지를 읽고, 클릭하고, 폼을 작성할 수 있도록 지원하는
-    "AI 에이전트용 브라우저" 플랫폼.
-  </p>
-  <div class="why">
-    Forbes Next Billion-Dollar Startups 2025 선정. AI 에이전트 경제의 핵심 인프라 레이어.
-    에이전트가 웹에서 자율적으로 작업을 수행하기 위한 필수 인프라로,
-    에이전트 시장 성장과 직결된 TAM 확장.
-  </div>
-  <div class="source-link">출처: <a href="https://www.linkedin.com/posts/itselanagold_forbes-says-these-25-startups-will-hit-1b-activity-7361427290959806465-c4_0" target="_blank">Forbes via LinkedIn</a></div>
+  <p class="desc">AI 에이전트용 헤드리스 브라우저 인프라. 에이전트가 웹을 자율적으로 탐색/작업.</p>
+  <div class="why">AI 에이전트 경제의 필수 인프라 레이어. Forbes 선정.</div>
 </div>
 
-<!-- 9. Collate -->
 <div class="startup-card">
   <div class="top-row">
     <h3>Collate (OpenMetadata)</h3>
-    <span class="sector-tag tag-health">AI Life Sciences / Data</span>
+    <span class="sector-tag tag-health">AI Life Sciences</span>
   </div>
   <div class="meta-row">
-    <span class="meta-item"><strong>총 펀딩:</strong> $30M (Seed, 2025)</span>
-    <span class="meta-item"><strong>리드 투자자:</strong> YC (Surbhi Sarna 파트너)</span>
-    <span class="meta-item"><strong>소재지:</strong> 미국</span>
+    <span class="meta-item"><strong>총 펀딩:</strong> $30M (Seed)</span>
+    <span class="meta-item"><strong>리드:</strong> YC</span>
   </div>
-  <p class="desc">
-    바이오/라이프사이언스 분야의 서류 작업을 AI로 자동화하는 플랫폼.
-    FDA 제출 문서, 임상 시험 관련 페이퍼워크 등 고도로 규제된 문서를 지능적으로 처리한다.
-  </p>
-  <div class="why">
-    YC 파트너가 직접 창업한 기업. Forbes Next Billion-Dollar Startups 2025 선정.
-    $30M 시드는 바이오테크 AI에 대한 높은 투자 확신 시그널.
-    규제 문서 AI 자동화는 TAM이 크고 진입장벽이 높은 영역.
-  </div>
-  <div class="source-link">출처: <a href="https://www.linkedin.com/posts/itselanagold_forbes-says-these-25-startups-will-hit-1b-activity-7361427290959806465-c4_0" target="_blank">Forbes via LinkedIn</a></div>
+  <p class="desc">바이오/라이프사이언스 서류 작업 AI 자동화. FDA 제출 문서 등 규제 문서 처리.</p>
+  <div class="why">YC 파트너 직접 창업. $30M 시드는 바이오 AI에 대한 높은 확신. Forbes 선정.</div>
 </div>
 
-<!-- 10. Stackblitz -->
 <div class="startup-card">
   <div class="top-row">
     <h3>StackBlitz (Bolt)</h3>
-    <span class="sector-tag tag-devtools">AI DevTools / Vibe Coding</span>
+    <span class="sector-tag tag-devtools">Vibe Coding</span>
   </div>
   <div class="meta-row">
     <span class="meta-item"><strong>사용자:</strong> 5M+</span>
-    <span class="meta-item"><strong>성장:</strong> 매출의 85%가 최근 4개월 내 발생</span>
-    <span class="meta-item"><strong>소재지:</strong> 미국</span>
+    <span class="meta-item"><strong>성장:</strong> 매출 85% 최근 4개월 발생</span>
   </div>
-  <p class="desc">
-    브라우저 내에서 풀스택 앱을 즉시 생성하는 "바이브 코딩" 플랫폼.
-    자연어 프롬프트로 웹 애플리케이션을 생성/배포할 수 있으며,
-    WebContainers 기술로 브라우저에서 Node.js를 네이티브 실행한다.
-  </p>
-  <div class="why">
-    Forbes Next Billion-Dollar Startups 2025 선정. 5M 사용자 돌파.
-    매출의 85%가 최근 4개월 내 발생 — 하키스틱 성장 곡선.
-    Lovable, Replit과 함께 "바이브 코딩" 카테고리를 정의하는 핵심 플레이어.
-  </div>
-  <div class="source-link">출처: <a href="https://www.linkedin.com/posts/itselanagold_forbes-says-these-25-startups-will-hit-1b-activity-7361427290959806465-c4_0" target="_blank">Forbes via LinkedIn</a></div>
+  <p class="desc">브라우저 내 풀스택 앱 즉시 생성. WebContainers 기술로 브라우저에서 Node.js 네이티브.</p>
+  <div class="why">하키스틱 매출 곡선. Lovable, Cursor와 함께 "바이브 코딩" 카테고리 정의. Forbes 선정.</div>
 </div>
 
 </div>
@@ -518,19 +641,19 @@
 <h2 class="section-title">크로스 섹터 인사이트</h2>
 <div class="insight-box">
 <ul>
-  <li><strong>AI 옵저버빌리티/평가가 필수 인프라로 부상:</strong> AI 에이전트가 프로덕션에 배포되면서, 모델 품질 모니터링(Braintrust)과 문서 파싱(Reducto)이 매출 성장이 가장 빠른 AI 인프라 카테고리로 확인됨</li>
-  <li><strong>"펀딩 효율성"이 새로운 평가 기준:</strong> Decart($53M→$20M 매출), Graphite($72M→20x 매출 성장)처럼 소규모 펀딩으로 빠르게 매출을 만드는 기업이 투자자 선호도 급상승</li>
-  <li><strong>시드 밸류에이션 프리미엄 42%:</strong> AI 시드 스타트업의 프리-머니 밸류에이션 중위값 $17.9M으로, 비AI 대비 42% 프리미엄 (<a href="https://eqvista.com/ai-startup-fundraising-trends/" target="_blank">Eqvista</a>)</li>
-  <li><strong>버티컬 AI가 수평형을 역전:</strong> 금융(Rogo), 헬스케어(Assort Health), 법률(Harvey가 고객사), 라이프사이언스(Collate) 등 도메인 특화 AI가 범용 AI 대비 높은 고객 전환율과 락인 효과 시현</li>
-  <li><strong>에이전트 인프라 생태계 형성:</strong> Browserbase(웹 에이전트 브라우저) + Braintrust(에이전트 모니터링) + Reducto(문서 에이전트 입력) — 에이전트 스택의 각 레이어를 담당하는 전문 인프라 스타트업이 동시에 성장</li>
-  <li><strong>"바이브 코딩" 카테고리 폭발:</strong> StackBlitz(5M 사용자), Lovable, Cursor 등이 정의하는 새로운 개발 패러다임. 비개발자도 자연어로 앱 제작 가능 — 소프트웨어 개발 TAM의 근본적 확장</li>
+  <li><strong>AI 보안이 가장 뜨거운 하위 섹터:</strong> 에이전틱 AI 보안 스타트업 상위 10곳 총 펀딩 $3.6B. Gartner 전망 AI 사이버보안 시장 2024년 $10.8B에서 2029년 $172B (CAGR 73.9%)</li>
+  <li><strong>비인간 아이덴티티(NHI)가 새로운 보안 카테고리:</strong> AI 에이전트/API/서비스계정 폭증으로 NHI 시장 30% YoY 성장. Astrix Security, Oasis Security($195M)가 선두 경쟁</li>
+  <li><strong>"펀딩 효율성" 프리미엄 지속:</strong> Decart($53M→$20M 매출), Astrix(Series A 이후 5x 매출), WitnessAI(500% ARR) — 소규모 펀딩 고효율 기업에 투자자 몰림</li>
+  <li><strong>AI-RAN 시장 $37B 기회:</strong> Aira Technologies가 AT&T/Intel 직투자로 검증. 텔레콤 오퍼레이터의 에너지/스펙트럼 효율 최적화 AI 수요 급증</li>
+  <li><strong>에이전트 인프라 생태계 완성 중:</strong> Browserbase(브라우저) + Braintrust(모니터링) + Reducto(문서) + Astrix(보안) + Noma(포스처) — 에이전트 스택의 모든 레이어에 전문 인프라</li>
+  <li><strong>AI 시드 밸류에이션 42% 프리미엄:</strong> AI 시드 중위 프리머니 $17.9M, Series B $143M. 비AI 대비 42% 높음. AI 스타트업이 글로벌 VC의 80% 흡수 (Q1 2026)</li>
 </ul>
 </div>
 </div>
 
 <footer>
-  <p>본 리포트는 CB Insights, PitchBook, Statista, Forbes, TechCrunch, Bloomberg, Reuters 등의 데이터를 기반으로 작성되었습니다.</p>
-  <p style="margin-top:8px;">&copy; 2026 Startup Radar | 매일 오전 11시(KST) 업데이트 | <a href="https://github.com">GitHub Pages</a></p>
+  <p>본 리포트는 CB Insights, PitchBook, Statista, Forbes, TechCrunch, Bloomberg, SiliconANGLE, Software Strategies Blog 데이터 기반</p>
+  <p style="margin-top:8px;">&copy; 2026 Startup Radar | 매일 오전 11시(KST) 업데이트</p>
 </footer>
 
 </div>
